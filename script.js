@@ -7,22 +7,24 @@
 
 
 for (let i = 1; i <= 9*7; i++) {
+    function randomColor() {
+        let values = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C' , 'D', 'E', 'F']
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += values[Math.floor(Math.random()*16)]
+        }
+        console.log(color);
+        return color;
+    }
+
     let square = document.createElement('div');
     square.style.width = '11.1%';
     square.style.height = '11.1%';
     square.style.float = 'left';
     square.style.paddingBottom = "11.1%"
-
-    if (i % 2 == 0) {
-        square.style.backgroundColor = 'red';
-    }
-    else {
-        square.style.backgroundColor = 'black';
-    }
+    square.style.backgroundColor = randomColor();
 
     document.body.appendChild(square);
-    console.log(square);
-    console.log(square.style);
 }
 
 
